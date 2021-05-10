@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+section{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.container{
+    margin: 100px;
+}
+.container h2{
+    font-size: 2rem;
+}
+.container h1{
+    font-size: 4rem;
+}
+.container textarea{
+    font-size: 2.2rem;
+    height: 500px;
+    width: 880px;
+    padding: 18px;
+    overflow: auto;
+    resize: none;
+    outline: none;
+}
+.container button{
+    font-size: 2.2rem;
+    padding: 10px 22px;
+}

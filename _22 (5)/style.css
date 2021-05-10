@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* I Already Type This style to save your time  */
+/* You Can Pause and Copy This Style */
+/* :-) */
+
+.homePage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(2, 0, 19);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 50%;
+}
+
+#checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+}
+
+#checkbox2 {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+}
+
+.dummyCB {
+    height: 50px;
+    width: 100px;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 0px 0px 14px 3px rgb(180, 180, 180) inset, 0px 0px 29px -1px rgba(113, 113, 113, 1);
+    -webkit-box-shadow: 0px 0px 14px 3px rgb(180, 180, 180) inset, 0px 0px 29px -1px rgba(113, 113, 113, 1);
+    -moz-box-shadow: 0px 0px 14px 3px rgb(180, 180, 180) inset, 0px 0px 29px -1px rgba(113, 113, 113, 1);
+    position: relative;
+    cursor: none;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.dummyCB::before {
+    transition: all 0.3s;
+    content: "";
+    position: absolute;
+    left: 0px;
+    padding: 2px;
+    top: 50%;
+    width: calc(55px - 2px);
+    height: calc(100% - 0px);
+    background: rgb(26, 26, 26);
+    border-radius: 50px;
+    transform: translateY(-50%);
+    box-shadow: 0px 0px 14px 3px rgb(0, 0, 0) inset;
+    -webkit-box-shadow: 0px 0px 14px 3px rgb(0, 0, 0) inset;
+    -moz-box-shadow: 0px 0px 14px 3px rgb(0, 0, 0) inset;
+}
+
+.dummyCB::after {
+    content: "";
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0px;
+    transition: all 0.4s;
+    margin-left: 2%;
+    z-index: -1;
+    border-radius: 50px;
+    width: 40px;
+    height: 92%;
+    background: rgb(86, 255, 19);
+    box-shadow: 0px 0px 13px -4px rgb(255, 255, 255), 0px 0px 14px 3px rgba(9, 44, 0, 0.76) inset;
+    -webkit-box-shadow: 0px 0px 13px -4px rgb(255, 255, 255), 0px 0px 14px 3px rgba(9, 44, 0, 0.76) inset;
+    -moz-box-shadow: 0px 0px 13px -4px rgb(255, 255, 255), 0px 0px 14px 3px rgba(9, 44, 0, 0.76) inset;
+}
+
+.off {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 0px;
+    transition: all 0.4s;
+    margin-right: 2%;
+    z-index: -1;
+    border-radius: 50px;
+    width: 76px;
+    height: 92%;
+    background: rgb(255, 49, 49);
+    box-shadow: 0px 0px 13px -4px rgb(255, 255, 255), 0px 0px 14px 3px rgba(44, 9, 0, 0.76) inset;
+    -webkit-box-shadow: 0px 0px 13px -4px rgb(255, 255, 255), 0px 0px 14px 3px rgba(44, 9, 0, 0.76) inset;
+    -moz-box-shadow: 0px 0px 13px -4px rgb(255, 255, 255), 0px 0px 14px 3px rgba(44, 9, 0, 0.76) inset;
+}
+
+#checkbox:checked~.dummyCB::before {
+    right: 0px;
+    left: 44px;
+}
+
+#checkbox:checked~.dummyCB::after {
+    width: 78px;
+}

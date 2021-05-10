@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  background: #212121;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card{
+  width: 300px;
+  height: 400px;
+  margin: 0 80px;
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+  box-shadow: 3px 3px 12px 2px #070707d2,
+            -3px -3px 12px 2px #86868656,
+            inset 3px 3px 12px 2px #070707d2, 
+            inset -3px -3px 12px 2px #86868656;
+  padding: 30px 20px;
+}
+.content{
+  height: 360px;
+  background: #222;
+  box-shadow: 3px 3px 15px 5px #111;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.Card_Img{
+  border-radius: 50%;
+  border: 4px solid #eee;
+}
+.Card__Title{
+  font-size: 2.2rem;
+}
+.Card_Desc{
+  font-size: 1.1rem;
+  padding: 0 16px;
+  text-align: center;
+}
+.card:hover .content{
+  transform: translateY(-30px);
+}
+.card:hover .content .info__cont{
+  bottom: -20px;
+}
+.info__cont{
+  position: relative;
+  bottom: -40px;
+  transition: all 0.3s;
+}
+.Icons__Cont{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.Icons__Cont a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.4rem;
+  background: #0002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  margin: 2px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transform: translateY(120px);
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.Icons__Cont a:hover{
+  background: #fff;
+  color: #fff;
+  transition: none;
+
+}
+.card:hover .content .Icons__Cont a {
+  transform: translateY(10px);
+  pointer-events: all;
+  opacity: 1;
+}
+.Icons__Cont a:nth-child(1){
+  color: #d62977;
+  transition-delay: .2s;
+}
+.Icons__Cont a:nth-child(2){
+  color: #4267b2;
+  transition-delay: .15s;
+}
+.Icons__Cont a:nth-child(3){
+  color: #0088cc;
+  transition-delay: .1s;
+}
+.Icons__Cont a:nth-child(4){
+  color: #1da1f2;
+  transition-delay: 0s;
+}

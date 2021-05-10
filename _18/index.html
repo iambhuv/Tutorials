@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      left: -20%;
+      height: 600px;
+      width: 600px;
+      background: linear-gradient(55deg, crimson, rgba(255, 0, 106, 0.719), cyan);
+      border-radius: 50%;
+    }
+
+    body::after {
+      content: "";
+      position: absolute;
+      bottom: -90%;
+      right: -28%;
+      height: 1500px;
+      width: 1500px;
+      background: linear-gradient(55deg, rgb(230, 30, 30) 50%, rgb(183, 0, 255) 50%, cyan);
+      border-radius: 50%;
+      z-index: -1000;
+    }
+
+    * {
+      -webkit-touch-callout: none;
+      /* iOS Safari */
+      -webkit-user-select: none;
+      /* Safari */
+      -khtml-user-select: none;
+      /* Konqueror HTML */
+      -moz-user-select: none;
+      /* Old versions of Firefox */
+      -ms-user-select: none;
+      /* Internet Explorer/Edge */
+      user-select: none;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .form {
+      width: 264px;
+      height: 384px;
+      background: #191811;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.116);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(5.5px);
+      -webkit-backdrop-filter: blur(5.5px);
+      border-radius: 10px;
+      transform: perspective(1000px);
+      transform-style: preserve-3d;
+    }
+    .form:hover .grid-container{
+      position: relative;
+      top: 0;
+      pointer-events: unset;
+      transition: all 0.5s cubic-bezier(0.1, 1, 0.1, 1);
+      opacity: 1;
+      transform: translateZ(2000px);
+    }
+    .form:hover .welcomeText{
+      top: -100px;
+      pointer-events: none;
+      /* transition: all 0.5s cubic-bezier(0.1, 1, 0.1, 1); */
+      opacity: 0 !important;
+    }
+    .welcome__Text{
+      transition: all 0.4s linear;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      display: grid;
+      place-content: center;
+      gap: 38px;
+      text-align: center;
+      color: #ffffffbd;
+      font-family: 'Rubik', sans-serif;
+      font-size: 1.3rem;
+    }
+    .welcome__Text h1{
+      transform: rotate(-1deg);
+    }
+    .grid-container {
+      transform: translateZ(20px);
+      transition: all 0.2s cubic-bezier(0.1, 1, 0.1, 1);
+      position: relative;
+      top: 360px;
+      pointer-events: none;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      margin: 6px;
+      gap: 6px 6px;
+      grid-template-areas:
+        "display display display display"
+        "display display display display"
+        ". . . ."
+        ". . . ."
+        ". . . ."
+        ". . . equate"
+        ". . . equate";
+    }
+
+    .display {
+      grid-area: display;
+    }
+
+    .equate {
+      grid-area: equate;
+    }
+
+
+    /* For presentation only, no need to copy the code below */
+
+
+    .display,
+    .btn,
+    .equate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .inner-display {
+      width: 236px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(10.5px);
+      -webkit-backdrop-filter: blur(10.5px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-align: right;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .inner-text {
+      text-align: right;
+      background: #ffffff00;
+      height: 100px;
+      font-family: Rubik;
+      font-size: 24px;
+      margin: 20px 10px 10px 10px;
+      font-style: normal;
+      font-weight: 500;
+      color: #242424;
+      border-width: 0px;
+      border: none;
+    }
+
+    .inner-text:focus {
+      border-width: 0px;
+      border: none;
+      outline: none;
+    }
+
+    .inner-button {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.116);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(6.5px);
+      -webkit-backdrop-filter: blur(6.5px);
+      border-radius: 4px;
+      font-family: Rubik;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      color: #2c2c2c;
+      transition: box-shadow 0.3s ease-in-out;
+      transform: translateZ(20px);
+    }
+
+    .inner-button:active {
+      background: rgba(197, 197, 197, 0.10);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(13.0px);
+      -webkit-backdrop-filter: blur(13.0px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+
+    }
+
+
+    .equate .inner-button {
+      height: 82px;
+      background: rgba(133, 133, 133, 0.192);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(4.0px);
+      -webkit-backdrop-filter: blur(4.0px);
+      border-radius: 4px;
+    }
+
+    .equate .inner-button:active {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    #backspace {
+      font-size: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form" data-tilt data-tilt-glare data-tilt-max-glare=".8" data-tilt-reverse="true">
+    <div class="welcome__Text">
+      <h1>Calculator</h1>
+      <h3>Use Now, Just Hover</h3>
+    </div>
+    <div class="grid-container">
+      <div class="display">
+        <div class="inner-display">
+          <input type="text" class="inner-text" value="" readonly />
+        </div>
+      </div>
+      <div class="equate">
+        <div class="btn">
+          <div class="inner-button" id="equate">
+            <i class="fas fa-equals"></i>
+          </div>
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button " id="clear">
+          AC
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button ">
+          /
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button ">
+          x
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button" id="backspace">
+          <i class="far fa-backspace fa-4x"></i>
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button">
+          7
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button">
+          8
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button">
+          9
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button ">
+          -
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button">
+          4
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button">
+          5
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button">
+          6
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button ">
+          +
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button">
+          1
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button">
+          2
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button">
+          3
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button">
+          %
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button">
+          0
+        </div>
+      </div>
+      <div class="btn">
+        <div class="inner-button">
+          .
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="calcMain.js"></script>
+  <script src="./vanilla-tilt.js"></script>
+  <script type="text/javascript">
+    VanillaTilt.init(document.querySelectorAll(".inner-button"), {
+      max: 20,
+      speed: 40,
+      glare: true,
+      "max-glare": 0.5
+    });
+    VanillaTilt.init(document.querySelectorAll(".inner-display"), {
+      max: 10,
+      speed: 40,
+      glare: true,
+      "max-glare": 0.5
+    });
+  </script>
+</body>
+
+</html>

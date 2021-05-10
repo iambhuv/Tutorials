@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Varela+Round&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{ height: 100%;}
+
+section{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(-45deg, rgb(116, 15, 247), rgb(138, 48, 255)); 
+    background-size: cover;
+    background-blend-mode: darken;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__Card{
+    background: #ffffff8a;
+    backdrop-filter: blur(10px);
+    width: 420px;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+}
+
+#login__form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 100px 0;
+    margin-top: 60px;
+}
+
+.LoginForm__header{
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+.LoginForm__header h1{
+    font-size: 2.4rem;
+    color: rgb(19, 19, 19);
+    font-family: sans-serif
+}
+
+#login__form .input__groups{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    margin: 20px auto;
+}
+.input__groups .form__Input{
+    height: 42px;
+    width: 100%;
+    margin: auto;
+    outline: none;
+    background: none;
+    border: none;
+    font-size: 1.65rem;
+    font-family: sans-serif;
+    color: rgb(24, 24, 24);
+    background: rgba(0, 0, 0, 0.048);
+    position: relative;
+}
+.input__groups .form__Input::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.233);
+}
+.input__groups label{
+    color: rgb(32, 32, 32);
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    position: absolute;
+    pointer-events: none;
+    top: 10px;
+    left: 8px;
+    transition: all 0.4s;
+}
+.forgotPassword{
+    color: rgb(0, 247, 255);
+    font-family: sans-serif;
+    margin: 22px 0;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+}
+.forgotPassword:hover{
+    color: rgba(0, 247, 255, 0.767);
+}
+.input__groups input[type=text]:focus ~ label,
+.input__groups input[type=text]:valid ~ label{
+    top: -18px;
+    left: -4px;
+}
+.input__groups input[type="submit"]{
+    height: 44px;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: 120px;
+    font-size: 1.32rem;
+    outline: none;
+    background: rgba(255, 255, 255, 0.356);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    margin: 0px 0;
+    transition: all 0.4s;
+}
+.input__groups input[type="submit"]:hover{
+    box-shadow: 0px 0px 15px 1px rgba(255, 255, 255, 0.589);
+    text-shadow: 0 0 2px rgb(255, 255, 255);
+}
+
+/* Thanks For Watching */

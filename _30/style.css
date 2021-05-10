@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0ff;
+}
+.searchBox{
+    position: relative;
+}
+
+#search.active{
+    width: 300px;
+    padding: 10px 22px;
+    padding-left: 60px;
+    box-shadow: 2px 3px 8px 3px #00585877;
+}
+#search{
+    height: 48px;
+    width: 0px;
+    font-size: 1.4rem;
+    padding: 10px 0px;
+    padding-left: 0px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rgb(31, 31, 31);
+    border-radius: 50px;
+    transition: all 0.5s;
+}
+#toggleSearch{
+    position: absolute;
+    display: grid;
+    place-items: center;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    height: calc(100% + 6px);
+    width: calc(50px + 6px);
+    background: #fff;
+    color: #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#clearSearch{
+    position: absolute;
+    right: 14px;
+    color: #555;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transform-origin: top;
+    display: none;
+    transition-delay: 1s;
+    transition: all 0.1s;
+}
+#search.active:not(:placeholder-shown) ~ #clearSearch{
+    display: block;
+}
+#clearSearch:hover{
+    animation: rotateNscale 2s ease-in infinite;
+}
+@keyframes rotateNscale {
+    0%{
+        transform: rotate(0deg) scale(1) translateY(-50%);
+    }10%{
+        transform: rotate(-20deg) scale(1) translateY(-50%);
+    }50%{
+        transform: rotate(360deg) scale(1.5) translateY(-50%);
+    }90%{
+        transform: rotate(-20deg) scale(1) translateY(-50%);
+    }100%{
+        transform: rotate(0deg) scale(1) translateY(-50%);
+    }
+}
+
+#search::placeholder{
+    color: #000;
+}
+

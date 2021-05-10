@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background: #001;
+}
+button:disabled{
+    cursor: default;
+}
+button{
+    background: none;
+    border: none;
+    outline: none;
+    padding: 14px 22px;
+    background: #fff3;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.adBanner_Downloading{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    background: rgb(247, 247, 247);
+    align-items: center;
+    justify-content: center;
+}
+
+#closeAddbanner{
+    color: rgb(255, 255, 255);
+    font-size: 1.4rem;
+    cursor: pointer;
+    position: absolute;
+    right: 26px;
+    top: 20px;
+    padding: 0 6px;
+    background: rgb(0, 0, 0);
+}
+.adBanner_Downloading h1{
+    color: #333;
+    background: #fff;
+    padding: 12px 16px;
+    text-align: center;
+    width: fit-content;
+    border-radius: .25rem;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.333);
+}
+
+@media (max-width: 700px) {
+    .adBanner_Downloading h1{
+        padding: 12px 8px;
+        width: 354px;
+    }
+}

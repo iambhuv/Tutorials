@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.main-div {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #e2f2fe;
+}
+
+.inner-div {
+  min-width: 40vw;
+  position: relative;
+  background: #fff;
+  padding: 2rem 5rem 3rem 5rem;
+  border-radius: 1rem;
+  -webkit-box-sizing: 0 1rem 1rem -0.7rem rgba(0, 0, 0, 0.4);
+          box-sizing: 0 1rem 1rem -0.7rem rgba(0, 0, 0, 0.4);
+}
+
+.inner-div h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin: 1rem 0 3.5rem 0;
+}
+
+.inner-div ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.inner-div li {
+  font-size: 2rem;
+  margin: 0.65rem 0;
+  list-style-type: none;
+  display: block;
+}
+
+.inner-div input {
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.inner-div label {
+  background: rgba(43, 255, 227, 0.253);
+  padding: .6rem .8rem;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+.inner-div label:hover {
+  background: rgba(38, 219, 195, 0.253);
+}
+
+.inner-div input:checked + label {
+  background: yellowgreen;
+}
+
+#submit {
+  width: 100px;
+  padding: .8rem 0 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 2.5rem auto 0 auto;
+  display: block;
+  background: rgba(0, 81, 255, 0.836);
+  color: white;
+  border: 2px solid #4040ff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  outline: none;
+}
+
+#submit:hover {
+  background: rgba(0, 81, 255, 0.836);
+  -webkit-box-shadow: 0 0 8px #4040ff;
+          box-shadow: 0 0 8px #4040ff;
+  text-shadow: 0 0 10px #fff;
+}
+
+.base-timer {
+  position: absolute;
+  top: 0;
+  margin: auto;
+}
+
+.base-timer__svg {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 8px;
+  stroke: rgba(131, 131, 131, 0.918);
+}
+
+.base-timer__path-remaining {
+  stroke-width: 9px;
+  stroke-linecap: round;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: 1s linear all;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  -webkit-animation: timerColor 6s linear forwards;
+          animation: timerColor 6s linear forwards;
+}
+
+@-webkit-keyframes timerColor {
+  0% {
+    color: #13cc13;
+  }
+  50% {
+    color: #ffe600;
+  }
+  100% {
+    color: red;
+  }
+}
+
+@keyframes timerColor {
+  0% {
+    color: #13cc13;
+  }
+  50% {
+    color: #ffe600;
+  }
+  100% {
+    color: red;
+  }
+}
+
+.base-timer__label {
+  position: static;
+  text-align: left;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0.2rem 0 1.5rem 0;
+  margin-left: auto;
+  top: 2px;
+  right: 42px;
+  top: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2.4rem;
+  font-weight: 600;
+  font-family: cursive, sans-serif;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Download Function</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dwnldAnchors">
+        <a id="1001" href="./Untitled.png" download="fileNumber: 1001" ></a>
+        <a id="1002" href="./Untitled.png" download="fileNumber: 1002" ></a>
+        <a id="1003" href="./Untitled.png" download="fileNumber: 1003" ></a>
+        <a id="1004" href="./Untitled.png" download="fileNumber: 1004" ></a>
+        <a id="1005" href="./Untitled.png" download="fileNumber: 1005" ></a>
+    </div>
+    <div class="container">
+        <button data-download-target="1001">Download</button>
+        <br>
+        <br>
+        <button data-download-target="1002">Download</button>
+        <br>
+        <br>
+        <button data-download-target="1003">Download</button>
+        <br>
+        <br>
+        <button data-download-target="1004">Download</button>
+        <br>
+        <br>
+        <button data-download-target="1005">Download</button>
+        <br>
+        <br>
+        <br>
+        <div class="adBanner_Downloading">
+            <span id="closeAddbanner">⨉</span>
+            <h1 id="countTimer">Your File will Start Downloading in <span>05</span>s</h1>
+            <h1 id="sucessDownloading">Your File is Downloading</h1>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="./simpleDownload.js"></script>
+</body>
+</html> 

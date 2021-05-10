@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Dropdown</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            background: #101010;
+            padding: 100px;
+            justify-content: space-evenly;
+
+        }
+        .dropdown{
+            display: flex;
+        }
+        .dropdown__button{
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.8rem;
+            padding: 14px 22px;
+            background: #fffa;
+            height: fit-content;
+        }
+        .dropdown__menu{
+            display: flex;
+            opacity: 0;
+            position: relative;
+            left: -80px;
+            flex-direction: column;
+            margin-left: 1px;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+        .dropdown__menu__ACTIVE{
+            left: 0;
+            opacity: 1;
+            pointer-events: all;
+        }
+        .dropdown__menu li{
+            list-style: none;
+            padding: 14px 0;
+        }
+        .dropdown__link{
+            padding: 14px 22px;
+            font-size: 1.8rem;
+            background: #fffa;
+            color: #000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="dropdown">
+            <a href="#" class="dropdown__button">Dropdown</a>
+            <ul class="dropdown__menu">
+                <li><a href="#" class="dropdown__link">Link 1</a></li>
+                <li><a href="#" class="dropdown__link">Link 2</a></li>
+                <li><a href="#" class="dropdown__link">Link 3</a></li>
+                <li><a href="#" class="dropdown__link">Link 4</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="dropdown__button">Dropdown</a>
+            <ul class="dropdown__menu">
+                <li><a href="#" class="dropdown__link">Link 1</a></li>
+                <li><a href="#" class="dropdown__link">Link 2</a></li>
+                <li><a href="#" class="dropdown__link">Link 3</a></li>
+                <li><a href="#" class="dropdown__link">Link 4</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="dropdown__button">Dropdown</a>
+            <ul class="dropdown__menu">
+                <li><a href="#" class="dropdown__link">Link 1</a></li>
+                <li><a href="#" class="dropdown__link">Link 2</a></li>
+                <li><a href="#" class="dropdown__link">Link 3</a></li>
+                <li><a href="#" class="dropdown__link">Link 4</a></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript">
+        const dropdown__button = $(".dropdown__button");
+
+        $(dropdown__button).click(function(){
+            $(this).next(".dropdown__menu").toggleClass("dropdown__menu__ACTIVE");
+        });
+    </script>
+</body>
+</html>

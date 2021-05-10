@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Animated Text Loader</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        .hero{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #010012;
+        }
+        .box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            width: 260px;
+            border-bottom: 2px solid #fff;
+            color: #fff;
+        }
+        .mainText{
+            font-size: 3rem;
+            font-family: sans-serif;
+            display: flex;
+        }
+        .mainWord{
+            display: block;
+            margin: 0 4px;
+            transition: all 0.5s;
+
+        }
+        .mainWord:hover{
+            background: crimson;
+            color: #010012;
+            transition: none;
+        }
+        .mainWord:nth-child(1){
+            animation: coolAnimationText 1.2s linear infinite;
+            animation-delay: .2s;
+        }
+        .mainWord:nth-child(2){
+            animation: coolAnimationText 1.2s linear infinite;
+            animation-delay: .4s;
+        }
+        .mainWord:nth-child(3){
+            animation: coolAnimationText 1.2s linear infinite;
+            animation-delay: .6s;
+        }
+        .mainWord:nth-child(4){
+            animation: coolAnimationText 1.2s linear infinite;
+            animation-delay: .8s;
+        }
+        .mainWord:nth-child(5){
+            animation: coolAnimationText 1.2s linear infinite;
+            animation-delay: 1s;
+        }
+        .mainWord:nth-child(6){
+            animation: coolAnimationText 1.2s linear infinite;
+            animation-delay: 1.2s;
+        }
+        .mainWord:nth-child(7){
+            animation: coolAnimationText 1.2s linear infinite;
+            animation-delay: 1.4s;
+        }
+        .mainWord:nth-child(8){
+            animation: dotAnimation 1.2s linear infinite;
+            animation-delay: 1.6s;
+        }
+        .mainWord:nth-child(9){
+            animation: dotAnimation 1.2s linear infinite;
+            animation-delay: 1.8s;
+        }
+        .mainWord:nth-child(10){
+            animation: dotAnimation 1.2s linear infinite;
+            animation-delay: 2s;
+        }
+        @keyframes dotAnimation{
+            0%, 40%{
+                transform: scale(1);
+            }20%{
+                transform: scale(2);
+                
+                text-shadow: 0 0 1px  #fff,
+                             0 0 2px #fff,
+                             0 0 3px #fff2,
+                             0 0 5px #fff2,
+                             0 0 8px #fff2;
+            }
+        }
+
+        @keyframes coolAnimationText{
+            0%, 40%{
+                transform: scale(1);
+                text-transform: lowercase;
+            }20%{
+                transform: scale(1.4);
+                text-transform: uppercase;
+                text-shadow: 0 0 1px  #fff,
+                             0 0 2px #fff,
+                             0 0 3px #fffc,
+                             0 0 5px #fffc,
+                             0 0 8px #fffc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="box">
+            <h1 class="mainText">
+                <span class="mainWord">l</span>
+                <span class="mainWord">o</span>
+                <span class="mainWord">a</span>
+                <span class="mainWord">d</span>
+                <span class="mainWord">i</span>
+                <span class="mainWord">n</span>
+                <span class="mainWord">g</span>
+                <span class="mainWord">.</span>
+                <span class="mainWord">.</span>
+                <span class="mainWord">.</span>
+            </h1>
+        </div>
+    </section>
+</body>
+</html>

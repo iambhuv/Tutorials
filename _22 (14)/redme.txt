@@ -1,0 +1,7 @@
+// Background Color ::-
+#141414
+
+
+// Box Shadow ::-
+box-shadow: 5px 5px 5px #080808,
+            -5px -5px 5px #202020;

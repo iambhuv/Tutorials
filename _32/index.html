@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Get Fontwesome from cdnjs  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>HTML Accordion</title>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li>
+                <input type="radio" name="accordion">
+                <i></i>
+                <h2>First Accordion</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sint beatae, vel eveniet, tenetur autem cum obcaecati tempora inventore ullam culpa tempore vitae voluptatibus quis numquam veniam explicabo nostrum similique?</p>
+            </li>
+            <li>
+                <input type="radio" name="accordion">
+                <i></i>
+                <h2>Second Accordion</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sint beatae, vel eveniet, tenetur autem cum obcaecati tempora inventore ullam culpa tempore vitae voluptatibus quis numquam veniam explicabo nostrum similique?</p>
+            </li>
+            <li>
+                <input type="radio" name="accordion">
+                <i></i>
+                <h2>Third Accordion</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sint beatae, vel eveniet, tenetur autem cum obcaecati tempora inventore ullam culpa tempore vitae voluptatibus quis numquam veniam explicabo nostrum similique?</p>
+            </li>
+            <li>
+                <input type="radio" name="accordion">
+                <i></i>
+                <h2>Fourth Accordion</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sint beatae, vel eveniet, tenetur autem cum obcaecati tempora inventore ullam culpa tempore vitae voluptatibus quis numquam veniam explicabo nostrum similique?</p>
+            </li>
+            <li>
+                <input type="radio" name="accordion">
+                <i></i>
+                <h2>Fifth Accordion</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis sint beatae, vel eveniet, tenetur autem cum obcaecati tempora inventore ullam culpa tempore vitae voluptatibus quis numquam veniam explicabo nostrum similique?</p>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('input[name="accordion"]').click(function(){
+                var $radio = $(this);
+                if ($radio.data('waschecked') == true)
+                {
+                    $radio.prop('checked', false);
+                    $radio.data('waschecked', false);
+                }else{
+                    $radio.data('waschecked', false);
+                    $radio.data('waschecked', true);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

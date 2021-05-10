@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    user-select: none;
+}
+html{
+    font-size: 62.5%;
+}
+
+.main-div{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: hsl(206, 92%, 94%);
+}
+.inner-div{
+    min-width: 40vw;
+    position: relative;
+    background: #fff;
+    padding: 2rem 5rem 3rem 5rem;
+    border-radius: 1rem;
+    box-sizing: 0 1rem 1rem -0.7rem rgba(0,0,0,0.4);
+}
+
+.inner-div h2{
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin: 1rem 0 3.5rem 0;
+}
+
+.inner-div ul{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.inner-div li{
+    font-size: 2rem;
+    margin: 0.65rem 0;
+    list-style-type: none;
+    display: block;
+}
+.inner-div input{
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+.inner-div label{
+    background: rgba(43, 255, 227, 0.253);
+    padding: .6rem .8rem;
+    cursor: pointer;
+    border: 1px solid rgb(255, 255, 255);
+}
+.inner-div label:hover{
+    background: rgba(38, 219, 195, 0.253);
+}
+.inner-div input:checked + label{
+    background: yellowgreen;
+}
+#submit{
+    width: 100px;
+    padding: .8rem 0 0.5rem 0;
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 2.5rem auto 0 auto;
+    display: block;
+    background: rgba(0, 81, 255, 0.836);
+    color: white;
+    border: 2px solid rgb(64, 64, 255);
+    transition: all 0.2s;
+    outline: none;
+}
+#submit:hover{
+    background: rgba(0, 81, 255, 0.836);
+    box-shadow: 0 0 8px rgb(64, 64, 255);
+    text-shadow: 0 0 10px #fff;
+}
+.base-timer {
+    position: absolute;
+    top: 0;
+    margin: auto;
+}
+
+.base-timer__svg {
+    transform: scaleX(-1);
+}
+
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+
+.base-timer__path-elapsed {
+    stroke-width: 8px;
+    stroke: rgba(131, 131, 131, 0.918);
+}
+
+.base-timer__path-remaining {
+    stroke-width: 9px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+    animation: timerColor 6s linear forwards;
+}
+
+@keyframes timerColor{
+    0%{
+        color: rgb(19, 204, 19);
+    }
+    50%{
+        color: rgb(255, 230, 0);
+    }
+    100%{
+        color: red;
+    }
+}
+
+.base-timer__label {
+    position: static;
+    text-align: left;
+    width: fit-content;
+    margin: 0.2rem 0 1.5rem 0;
+    margin-left: auto;
+    top: 2px;
+    right: 42px;
+    top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+    font-family: cursive, sans-serif;
+}

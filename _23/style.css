@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+section:nth-child(1){
+    background: rgba(255, 0, 0, 0.363) url('./Images/1.jpg');
+}
+section:nth-child(2){
+    background: rgba(0, 0, 0, 0) url('./Images/2.jpg');
+}
+section:nth-child(3){
+    background: rgba(0, 0, 0, 0) url('./Images/3.jpg');
+}
+section:nth-child(4){
+    background: rgba(0, 0, 0, 0) url('./Images/4.jpg');
+}
+section:nth-child(5){
+    background: rgba(0, 0, 0, 0) url('./Images/5.jpg');
+}
+section:nth-child(6){
+    background: rgba(0, 0, 0, 0) url('./Images/6.jpg');
+}
+section:nth-child(7){
+    background: rgba(0, 0, 0, 0) url('./Images/7.jpg');
+}
+section:nth-child(8){
+    background: rgba(0, 0, 0, 0) url('./Images/8.jpg');
+}
+section:nth-child(9){
+    background: rgba(0, 0, 0, 0) url('./Images/9.jpg');
+}
+section:nth-child(10){
+    background: rgba(0, 0, 0, 0) url('./Images/10.jpg');
+}
+section{
+    height: 100vh;
+    width: 100%;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    font-size: 3rem;
+    color: #333;
+    display: grid;
+    place-items: center;
+    text-align: center
+}

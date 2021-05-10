@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Varela Round", sans-serif;
+}
+body {
+  z-index: -10;
+}
+
+.container {
+  background: #001;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card {
+  width: 300px;
+  height: 380px;
+  background: #fff2;
+  margin: 0 30px;
+  text-align: center;
+  padding: 28px 32px;
+  color: #fff;
+  position: relative;
+  animation: gradient 20s linear infinite;
+  background-size: 1000% 1000% !important;
+}
+.card:nth-child(1) {
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+}
+.card:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  filter: blur(28px);
+  background: -webkit-linear-gradient(to right, #ffc500, #c21500);
+  background: linear-gradient(to right, #ffc500, #c21500);
+}
+.card:nth-child(2) {
+  background: -webkit-linear-gradient(to right, #753a88, #cc2b5e);
+  background: linear-gradient(to right, #753a88, #cc2b5e);
+}
+.card:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  filter: blur(28px);
+  background: -webkit-linear-gradient(to right, #753a88, #cc2b5e);
+  background: linear-gradient(to right, #753a88, #cc2b5e);
+}
+.card:nth-child(3) {
+  background: -webkit-linear-gradient(to bottom, #3a7bd5, #00d2ff);
+  background: linear-gradient(to bottom, #3a7bd5, #00d2ff);
+}
+.card:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  filter: blur(28px);
+  background: -webkit-linear-gradient(to bottom, #3a7bd5, #00d2ff);
+  background: linear-gradient(to bottom, #3a7bd5, #00d2ff);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 200% 0;
+	}
+	100% {
+		background-position: 400% 0;
+	}
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  right: 6px;
+  background: rgba(0, 0, 0, 0.705);
+}
+.content {
+  z-index: 2;
+  position: relative;
+}
+.content img {
+  margin: 6px 0;
+  width: 140px;
+}
+.content h1 {
+  font-size: 2rem;
+  padding: 10px 0;
+}
+.content p {
+  text-align: center;
+  width: 220px;
+  margin: auto;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
