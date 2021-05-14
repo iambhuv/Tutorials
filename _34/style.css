@@ -27,7 +27,25 @@
 }
 .select__Rectangle{
     background: rgba(30, 104, 240, 0.349);
-    height: 100px;
-    min-width: 100px;
+    height: 1px;
+    width: 1px;
     position: absolute;
+    transform: translate(-50%, -50%);
+    animation: rippleEffect 0.4s linear forwards;
+    border-radius: 50%;
+}
+@keyframes rippleEffect {
+    0%{
+        opacity: 1;
+        height: 1px;
+        width: 1px;
+    }50%{
+        opacity: 0.6;
+        height: 28px;
+        width: 28px;
+    }100%{
+        opacity: 0;
+        height: 58px;
+        width: 58px;
+    }
 }
