@@ -1,6 +1,6 @@
 const mainBox = document.getElementById("mainBox");
 
-mainBox.addEventListener("mousedown", (event) =>{
+const mainFunc = (event) =>{
     const selRect = document.createElement('div');
     selRect.classList.add("select__Rectangle")
     selRect.style.top = event.clientY+"px";
@@ -9,4 +9,9 @@ mainBox.addEventListener("mousedown", (event) =>{
     setTimeout(() =>{
         selRect.remove();
     }, 600)
-});
+    selRect.addEventListener("click", () =>{
+        alert("rectangle Clicked")
+    })
+}
+
+mainBox.addEventListener("mousedown", mainFunc, false);
