@@ -31,12 +31,21 @@ class TextEditDemo(QWidget):
         
     def btnPress2_Clicked(self):
         returnedResult =  mainFuntion(self)
-        self.textEdit.setText(returnedResult);
+        self.textEdit.setText(returnedResult)
+
+
+
+
+
+
+
+
+
 
 
 def mainFuntion(win):
     print("Hmm")
-    sthirValue = userInput = int(win.userDigitInput.text());
+    sthirValue = userInput = int(win.userDigitInput.text())
     
     
     
@@ -45,18 +54,16 @@ def mainFuntion(win):
     val = programPara
     num = 1
 
-    resultList = [];
+    resultList = []
 
     while val < (sthirValue*muchLines+1):
         resultList.append(str(sthirValue)+" ⨯ "+str(num)+" = "+str(val))
         num += 1
-        val += sthirValue;
+        val += sthirValue
 
-    finalResult = '\n'.join(map(str, resultList));
+    finalResult = '\n'.join(map(str, resultList))
     
-    return finalResult;
-
-
+    return finalResult
 
 
 

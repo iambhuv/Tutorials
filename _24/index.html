@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTable</title>
+
+    <!-- Cascading Stylesheets Here -->
+    <link rel="stylesheet" href="./assets/prism.js/css/prism.css">
+    <link rel="stylesheet" href="./assets/scss/style.css">
+</head>
+
+<body>
+    <main class="hero">
+        <div class="header">
+            <h1>MyTable</h1>
+        </div>
+        <div class="main">
+            <h2 class="main__Header">Get Maths Table Here</h2>
+            <div class="main__Input">
+                <p class="user__Input__Label">Enter Your Value Here</p>
+                <input type="text" id="user__Input" placeholder="Your Value">
+                <p id="toggleMuchLineIndex">Get Custom Table Lines</p><br>
+                <input type="text" id="user__MuchLineInput" hidden placeholder="Table Lines Value">
+            </div>
+            <div class="main__Input__Submit">
+                <button type="button" id="user__Input__Submit" >Submit</button>
+            </div>
+            <div class="main__Output">
+                <pre>
+                    <code class="line-numbers language-text output__Box" id="resutBox">
+                        <h2 class="placeholder">Your Output Will Be Shown Here</h2>
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer__text">
+                MyTable &copy; 2021 - All Rights Reserved
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScripts File Here -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/prism.js/js/prism.js"></script>
+    <script src="./assets/prism.js/plugins/js/prism-normalize-whitespace.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript">
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true,
+        });
+    </script>
+</body>
+
+</html>
