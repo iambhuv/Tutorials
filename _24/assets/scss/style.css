@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #afafaf;
+}
+
+.hero {
+  background: #0665b3;
+  min-height: 100vh;
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+.hero .header {
+  width: 100%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2rem;
+  color: #444;
+  background: #fff;
+  font-size: 1.6rem;
+}
+
+.hero .main {
+  min-height: calc(100vh - 60px);
+}
+
+.hero .main .main__Header {
+  text-align: center;
+  font-size: 3.6rem;
+  padding: 3.2rem 0;
+  color: #f0ffff;
+}
+
+.hero .main .main__Input {
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  text-align: center;
+}
+
+.hero .main .main__Input .user__Input__Label {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 1.6rem;
+  color: #2fff06;
+}
+
+.hero .main .main__Input #toggleMuchLineIndex {
+  font-size: 1.6rem;
+  text-align: right;
+  padding-right: 10px;
+  color: cyan;
+  cursor: pointer;
+}
+
+.hero .main .main__Input #user__Input,
+.hero .main .main__Input #user__MuchLineInput {
+  font-size: 2.2rem;
+  padding: .8rem 1.2rem;
+  outline: none;
+  border: 1px solid #f0ffff;
+  color: #fff;
+  background: #0000;
+}
+
+.hero .main .main__Input #user__Input::-webkit-input-placeholder,
+.hero .main .main__Input #user__MuchLineInput::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.hero .main .main__Input #user__Input:-ms-input-placeholder,
+.hero .main .main__Input #user__MuchLineInput:-ms-input-placeholder {
+  color: #fff;
+}
+
+.hero .main .main__Input #user__Input::-ms-input-placeholder,
+.hero .main .main__Input #user__MuchLineInput::-ms-input-placeholder {
+  color: #fff;
+}
+
+.hero .main .main__Input #user__Input::placeholder,
+.hero .main .main__Input #user__MuchLineInput::placeholder {
+  color: #fff;
+}
+
+.hero .main .main__Input__Submit {
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  text-align: center;
+}
+
+.hero .main .main__Input__Submit #user__Input__Submit {
+  font-size: 2.4rem;
+  font-weight: 500;
+  outline: none;
+  border: 1px solid snow;
+  background: #0000;
+  color: seashell;
+  padding: 4px 10px;
+  margin: 38px 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.hero .main .main__Input__Submit #user__Input__Submit:hover {
+  color: #333;
+}
+
+.hero .main .main__Input__Submit #user__Input__Submit:hover::before {
+  left: 50%;
+}
+
+.hero .main .main__Input__Submit #user__Input__Submit::before {
+  content: "Submit";
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  position: absolute;
+  height: 48px;
+  width: 160px;
+  background: snow;
+  color: #222;
+  top: 50%;
+  left: -100%;
+  border-radius: 50px;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.hero .main .main__Output {
+  margin: auto;
+  max-width: 800px;
+  position: relative;
+  text-align: center;
+  padding: 0 20px;
+  padding-bottom: 5rem;
+}
+
+.hero .main .main__Output pre {
+  min-height: calc(calc(100vh - 60px) - (110px + 100px + 120px) - 60px);
+}
+
+.hero .main .main__Output pre .placeholder {
+  color: #dddb;
+  text-align: center;
+}
+
+.hero .footer {
+  width: 100%;
+  height: 60px;
+  background: #333;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2.4rem;
+}
+/*# sourceMappingURL=style.css.map */
