@@ -14,21 +14,22 @@
 
     <!-- Javascript ↓↓ -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <script type="text/javascript">
         const mainButton = $(".mainButton");
 
-        function mainFunc(e){
-            const ripple = document.createElement('span')
-            ripple.classList.add('rippleBlock')
+        function mainFunc(e) {
+            const ripple = document.createElement('span');
+            ripple.classList.add("rippleBlock")
             ripple.style.top = e.clientY - e.target.offsetTop+"px";
             ripple.style.left = e.clientX - e.target.offsetLeft+"px";
-            this.appendChild(ripple);
+            this.appendChild(ripple)
 
             setTimeout(() => {
                 ripple.remove();
             }, 1200);
         }
-
+        
         mainButton.on("click", mainFunc)
     </script>
 </body>

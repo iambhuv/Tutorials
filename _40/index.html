@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detect System Theme in Js</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Quicksand", sans-serif;
+      }
+      .container {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        font-size: 2rem;
+        text-align: center;
+      }
+      .container.dark {
+        background: #111;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Current System Theme is : <span id="sysTheme">Cheking</span></h1>
+    </div>
+
+    <script type="text/javascript">
+      const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+      const sysTheme = document.getElementById("sysTheme");
+      const container = document.querySelector(".container");
+      if (darkThemeMq.matches) {
+        console.log("Dark Theme");
+        sysTheme.innerHTML = "Dark";
+        container.classList.add("dark");
+      } else {
+        console.log("Light Theme");
+        sysTheme.innerHTML = "Light";
+        container.classList.remove("dark");
+      }
+    </script>
+  </body>
+</html>

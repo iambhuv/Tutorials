@@ -1,57 +1,58 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background: linear-gradient(-57deg, #131320, #161420, #010101);
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position:relative;
+body {
+  background: linear-gradient(-57deg, #131320, #161420, #010101);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
-body::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 50%;
-    background: #ffffff0c;
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  background: #ffffff0c;
 }
-.mainButton{
-    font-size: 2.2rem;
-    padding: 20px 40px;
-    border: 1px solid #fff;
-    background: #ffffff18;
-    color: #fff;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    margin: 20px 0;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(8px);
+.mainButton {
+  font-size: 2.2rem;
+  padding: 20px 40px;
+  border: 1px solid #fff;
+  background: #ffffff18;
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+  margin: 20px 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  cursor: none;
 }
-.rippleBlock{
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    background: #ffffffdb;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-    pointer-events: none;
-    animation: ripple .6s ease-out forwards;
-    z-index: -1;
+.rippleBlock {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background: #ffffffdb;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  pointer-events: none;
+  animation: ripple 0.6s ease-out forwards;
+  z-index: -1;
 }
+
 @keyframes ripple {
-    to{
-        height: 580px;
-        width: 580px;
-        opacity: 0;
-    }
+  to {
+    height: 580px;
+    width: 580px;
+    opacity: 0;
+  }
 }
