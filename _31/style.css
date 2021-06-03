@@ -34,7 +34,6 @@ body::before {
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(8px);
-  cursor: none;
 }
 .rippleBlock {
   height: 80px;

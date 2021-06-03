@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.videoContainer {
+    position: relative;
+    width: fit-content;
+    margin: 2.6rem auto;
+    height: fit-content;
+}
+
+.IconContainer {
+    height: 60px;
+    width: 60px;
+    background: #000a;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+}
+.IconContainer.active {
+    animation: animate 0.8s linear forwards;
+}
+@keyframes animate {
+    0% {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        visibility: visible;
+        transform: translate(-50%, -50%) scale(2);
+    }
+    99% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2.5);
+        visibility: visible;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        visibility: hidden;
+        opacity: 0;
+    }
+}

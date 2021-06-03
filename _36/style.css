@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Yusei Magic", sans-serif;
+}
+#toggler {
+    -webkit-appearance: none;
+    height: 40px;
+    width: 80px;
+    border-radius: 50px;
+    position: absolute;
+    top: 1.6rem;
+    right: 2rem;
+    background: #0000;
+    box-shadow: 3px 3px 6px #aaa7, -3px -3px 6px #fff, inset 3px 3px 6px #aaa7, inset -3px -3px 6px #fff;
+    cursor: pointer;
+}
+
+#toggler:checked::before {
+    left: calc(100% - 4px);
+    transform: translate(-100%, -50%);
+}
+
+#toggler::before {
+    content: "";
+    position: absolute;
+    height: calc(40px - 8px);
+    width: calc(40px - 8px);
+    background: #fff;
+    top: 50%;
+    left: 4px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: 0.4s;
+    transition-property: left, transform;
+}
+
+body.dark #toggler {
+    box-shadow: 3px 3px 6px #121212, -3px -3px 6px #4446, inset 3px 3px 6px #121212, inset -3px -3px 6px #4446;
+}
+body.dark #toggler::before {
+    background: linear-gradient(145deg, #343434, #565656);
+}
+
+.contactPage {
+    min-height: 100vh;
+    width: 100%;
+    background: #e7e7e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 0;
+}
+.contactPage .contactForm {
+    height: fit-content;
+    padding: 1.8rem 0;
+    max-width: 580px;
+    width: 480px;
+    margin: 0 14px;
+    background: #0000;
+    border-radius: 1rem;
+    box-shadow: 11px 11px 16px #c9c9c9, -11px -11px 16px #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contactPage .heading {
+    color: #666;
+    margin-bottom: 0.6rem;
+}
+.contactPage .contactForm .inputGroup {
+    display: flex;
+    flex-direction: column;
+    width: 78%;
+    max-width: 360px;
+    position: relative;
+    margin: 0.6rem auto;
+}
+.contactPage .contactForm .inputGroup label {
+    font-size: 1.4rem;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 900;
+    color: #666;
+}
+.contactPage .contactForm .inputGroup input[type="text"],
+.contactPage .contactForm .inputGroup textarea {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 0.6rem 0.8rem;
+    font-size: 1.4rem;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 900;
+    color: #767676;
+    border-radius: 0px;
+    box-shadow: inset 3px 3px 9px #c4c4c4, inset -3px -3px 9px #fff;
+}
+.contactPage .contactForm .inputGroup textarea {
+    height: 100px;
+    resize: vertical;
+}
+.contactPage .contactForm .inputGroup textarea::-webkit-scrollbar {
+    width: 0;
+}
+.contactPage .contactForm .inputGroup input[type="submit"] {
+    width: fit-content;
+    padding: 0.4rem 1.4rem;
+    font-size: 1.4rem;
+    color: #575757;
+    background: #e7e7e7;
+    border: none;
+    outline: none;
+    box-shadow: 4px 4px 5px #c4c4c4, -4px -4px 5px #fff;
+}
+
+body.dark .contactPage {
+    background: #222;
+}
+body.dark .contactPage .heading {
+    color: #ddd;
+}
+body.dark .contactPage .contactForm {
+    background: #0000;
+    box-shadow: 9px 9px 17px #0e0e0e, -9px -9px 17px #363636;
+}
+body.dark .contactPage .contactForm .inputGroup label {
+    color: #ddd;
+}
+body.dark .contactPage .contactForm .inputGroup input[type="text"],
+body.dark .contactPage .contactForm .inputGroup textarea {
+    color: #ddd;
+    box-shadow: inset 4px 4px 7px #0e0e0e, inset -4px -4px 7px #363636;
+}
+body.dark .contactPage .contactForm .inputGroup input[type="text"]:-internal-autofill-selected {
+    background-color: transparent !important;
+    color: #767676 !important;
+}
+body.dark .contactPage .contactForm .inputGroup input[type="submit"] {
+    color: #d7d7d7;
+    background: #0000;
+    box-shadow: 3px 3px 8px #0e0e0e, -3px -3px 8px #363636;
+}
