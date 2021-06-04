@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Pause/Play Like Youtube</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="videoContainer">
+            <video width="1000px" height="550px" id="myVideo">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" />
+            </video>
+            <div class="IconContainer" id="play">
+                <img src="./play.png" alt="play">
+            </div>
+            <div class="IconContainer" id="pause">
+                <img src="./pause.png" alt="pause">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const video = document.getElementById("myVideo");
+        const play = document.getElementById("play");
+        const pause = document.getElementById("pause");
+
+        const mainFunction = () => {
+            if (video.paused) {
+                play.classList.add("active");
+                video.play();
+                setTimeout(() => {
+                    play.classList.remove("active")
+                }, 800);
+            } else {
+                pause.classList.add("active");
+                video.pause();
+                setTimeout(() => {
+                    pause.classList.remove("active")
+                }, 800);
+            }
+        }
+
+        video.addEventListener("click", mainFunction)
+        document.body.onkeyup = function (e) {
+            if (e.keyCode == 32) {
+                mainFunction();
+            }
+        }
+    </script>
+</body>
+
+</html>

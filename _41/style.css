@@ -1,0 +1,58 @@
+/** @format */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background: #121212;
+  height: 100vh;
+  color: #fff;
+}
+.darkModeToggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  /* overflow: hidden; */
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+#darkMode {
+  -webkit-appearance: none;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  background: #333;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.moon,
+.sun {
+  z-index: 2;
+  font-size: 2.4rem;
+  margin: 0 10px;
+  position: absolute;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.moon {
+  opacity: 1;
+}
+.sun {
+  opacity: 0;
+}
+
+#darkMode:checked ~ .moon {
+  opacity: 0;
+}
+#darkMode:checked ~ .sun {
+  opacity: 1;
+}

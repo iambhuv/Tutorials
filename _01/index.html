@@ -1,25 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Javascript - Adding Score on Button Click</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      section {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000022;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      #button {
+        background: none;
+        border: none;
+        outline: none;
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.623);
+        cursor: pointer;
+      }
+      #button:active {
+        background: white;
+        box-shadow: 0 0 15px 0px white;
+      }
+      #demoScore {
+        font-size: 2em;
+        color: white;
+        margin-top: 10px;
+        font-family: "consolas";
+      }
+    </style>
+  </head>
+  <body>
     <section>
-        <div class="container">
-            <button id="button">
-                Click
-            </button>
-            <p id="demoScore">Score : 0s</p>
-        </div>
+      <div class="container">
+        <button id="button">Click</button>
+        <p id="demoScore">Score : 0s</p>
+      </div>
     </section>
-
-
-    <script src="./script.js"></script>
-</body>
-
+    <script type="text/javascript">
+      const button = document.getElementById("button");
+      const demoScore = document.getElementById("demoScore");
+      let score = 0;
+      button.addEventListener("click", () => {
+        score++;
+        demoScore.innerHTML = "Score : " + score + "s";
+      });
+    </script>
+  </body>
 </html>

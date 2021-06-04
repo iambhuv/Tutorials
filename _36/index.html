@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neumorphism Contact Us Form</title>
+    <link type="text/css" rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="contactPage">
+        <span class="themeToggler">
+            <input type="checkbox" id="toggler">
+        </span>
+        <form method="POST" class="contactForm" spellcheck="false">
+            <h1 class="heading">Contact Us</h1>
+            <div class="inputGroup">
+                <label for="fname">Full Name</label>
+                <input type="text" name="fname" id="fname" autoComplete="off">
+            </div>
+            <div class="inputGroup">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" autoComplete="off">
+            </div>
+            <div class="inputGroup">
+                <label for="Mobile">Mobile</label>
+                <input type="text" name="Mobile" id="Mobile" autoComplete="off">
+            </div>
+            <div class="inputGroup">
+                <label for="message">Your Message</label>
+                <textarea name="message" id="message" autocomplete="off"></textarea>
+            </div>
+            <div class="inputGroup">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        const toggler = document.getElementById("toggler");
+        const themeToggle = () => {
+            document.body.classList.toggle("dark")
+        }
+
+        toggler.addEventListener("click", themeToggle)
+    </script>
+</body>
+
+</html>
