@@ -1,0 +1,325 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Poppins:wght@200&display=swap");
+
+/* Variables */
+
+:root {
+    --themeBg: #050505;
+    --trsp: transparent;
+    --d-White: #ddd;
+    --p-White: #fff;
+    --header-scrolled-Height: 60px;
+    --header-height: calc(var(--header-scrolled-Height) + 40px);
+    --footer-height: var(--header-scrolled-Height);
+    --red: #c91717;
+    --primary: #4dacff;
+    --dark: #0e0f0f;
+    --full: 100%;
+    --f-height: 100vh;
+    --themeTrans: all 0.3s;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--p-White);
+}
+
+body {
+    background: var(--themeBg);
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    height: var(--header-height);
+    background: var(--trsp);
+    width: var(--full);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    position: absolute;
+    transition: var(--themeTrans);
+    z-index: 100;
+}
+.navbar.scrolled {
+    position: fixed;
+    height: calc(var(--header-scrolled-Height) + 0px);
+    background: #1c1d1d;
+    backdrop-filter: blur(15px);
+}
+
+.navbar .logo {
+    font-size: 1.2rem;
+    font-family: "Raleway";
+    color: var(--d-White);
+    transition: var(--themeTrans);
+    z-index: 62;
+}
+.navbar.scrolled .logo {
+    font-size: 0.9rem;
+}
+
+.navbar .logo h1 span {
+    font-size: 3.2rem;
+    color: var(--primary);
+    transition: var(--themeTrans);
+}
+.navbar.scrolled .logo h1 span {
+    font-size: 2.2rem;
+    color: var(--primary);
+}
+
+/* <!-- ↓↓↓ Menu Toggler Style ↓↓↓-- > */
+
+.navToggle {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    line-height: var(--header-height);
+    transition: var(--themeTrans);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 64;
+    display: none;
+}
+.navbar.scrolled .navToggle {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+    line-height: var(--header-scrolled-Height);
+}
+.navToggle .menuWrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: var(--themeTrans);
+    overflow: hidden;
+}
+.navToggle.active .menuWrapper {
+    justify-content: center;
+}
+.navToggle .menuWrapper .line {
+    position: relative;
+    height: 3px;
+    width: 100%;
+    background: var(--p-White);
+    transition: var(--themeTrans);
+    left: 0;
+}
+.navToggle.menuWrapper .line:first-child {
+    bottom: 0;
+}
+.navToggle.active .menuWrapper .line:first-child {
+    bottom: -3px !important;
+    transform: rotate(45deg);
+}
+.navToggle.active .menuWrapper .line:nth-child(2) {
+    left: -102%;
+}
+.navToggle.active .menuWrapper .line:last-child {
+    top: -3px !important;
+    transform: rotate(-45deg);
+}
+.navToggle .menuWrapper .line:last-child {
+    top: 0;
+}
+
+/* <!-- ↑↑↑ Menu Toggler Style ↑↑↑-- > */
+
+.navbar .navList {
+    display: flex;
+}
+.navbar .navList .navLink {
+    margin: 0 16px;
+    font-size: 1.4rem;
+    color: var(--d-White);
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+}
+/* 
+.main {
+    padding-top: var(--header-height);
+} */
+
+.homePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: var(--full);
+    position: relative;
+    min-height: 720px;
+}
+
+.hpContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: var(--full);
+    height: var(--f-height);
+}
+
+.hpContainer .hpText h1 {
+    font-size: 3.2rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.hpContainer .hpText h1 .am {
+    color: var(--red);
+}
+.hpContainer .hpText h1 .typed-cursor {
+    font-weight: 200;
+    font-size: 4rem;
+    position: relative;
+    bottom: -4px;
+}
+
+.hpContainer .hpText {
+    width: 500px;
+}
+
+.hpContainer .hpText h3 {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+}
+.hpContainer .hpImg {
+    position: relative;
+}
+
+.homePageFooter {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.homePageFooter i {
+    font-size: 1.2rem;
+    height: 44px;
+    width: 44px;
+    display: grid;
+    place-content: center;
+    margin: 4px 0;
+    background: #8882;
+    border-radius: 0.2rem;
+    transition: var(--themeTrans);
+}
+.homePageFooter i {
+    color: var(--p-White);
+}
+
+.homePageFooter i:hover {
+    color: #050505;
+    background: var(--p-White);
+}
+
+.footer {
+    height: var(--footer-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark);
+    font-family: "Poppins", sans-serif;
+}
+
+.footer .footerLink {
+    color: var(--primary);
+}
+
+/* Responsive Media Queries */
+
+@media only screen and (max-width: 1280px) {
+    .homePageFooter {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10px;
+        flex-direction: row;
+    }
+    .homePageFooter a {
+        margin: 0 4px;
+    }
+
+    .hpContainer .hpImg img {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .hpContainer {
+        flex-direction: column-reverse;
+        justify-content: center;
+        width: var(--full);
+        height: var(--f-height);
+        text-align: center;
+    }
+
+    .hpContainer .hpImg img {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .navToggle {
+        display: block;
+    }
+    .navbar .logo {
+        font-size: 1.1rem;
+    }
+    .navbar .logo h1 span {
+        font-size: 2.6rem;
+    }
+    .navbar .navList.active {
+        left: 0;
+    }
+    .navbar .navList {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        top: 0;
+        left: -100%;
+        background: #1c1d1d;
+        overflow: hidden;
+        z-index: 60;
+        transition: left 0.5s;
+    }
+    .navbar .navList .navLink {
+        margin: 0 16px;
+        font-size: 2rem;
+        color: var(--d-White);
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+    }
+    .hpContainer .hpText {
+        width: 400px;
+    }
+    .hpContainer .hpText h1 {
+        font-size: 2.2rem;
+    }
+    .hpContainer .hpText h3 {
+        font-size: 1.2rem;
+    }
+}

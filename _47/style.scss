@@ -1,0 +1,46 @@
+$bg_color: #050505;
+$light_white: #ddd; 
+
+*{
+    font-family: poppins;
+}
+
+body{
+    background: $bg_color;
+}
+
+.header{
+    text-align: center;
+    color: $light_white;
+    font-size: 1.4rem;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 60px 0;
+    
+    .card{
+        background: $light_white;
+        color: $bg_color;
+        width: 20%;
+        height: 200px;
+        margin: 12px;
+        border-radius: 0.3rem;
+        display: grid;
+        place-content: center;
+        position: relative;
+        z-index: 1;
+        transition: all 0.4s;
+        backface-visibility: hidden;
+        color: transparent;
+        cursor: pointer;
+        user-select: none;
+
+        &.clicked{
+            color: #fff;
+            background: teal;
+        }
+    }
+}

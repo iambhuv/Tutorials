@@ -1,0 +1,55 @@
+* {
+  font-family: poppins;
+}
+
+body {
+  background: #050505;
+}
+
+.header {
+  text-align: center;
+  color: #ddd;
+  font-size: 1.4rem;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 60px 0;
+}
+
+.container .card {
+  background: #ddd;
+  color: #050505;
+  width: 20%;
+  height: 200px;
+  margin: 12px;
+  border-radius: 0.3rem;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  color: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.container .card.clicked {
+  color: #fff;
+  background: teal;
+}
+/*# sourceMappingURL=style.css.map */
