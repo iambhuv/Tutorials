@@ -1,5 +1,6 @@
 const HTMLinput = document.querySelector("#HTMLinput");
 const HTMLoutput = document.querySelector("#HTMLoutput");
+const convertBtn = document.getElementById("convertBtn")
 
 
 
@@ -54,7 +55,6 @@ const spncite = "<span class='spnElem'>cite</span>";
 const spncode = "<span class='spnElem'>code</span>";
 const spncol = "<span class='spnElem'>col</span>";
 const spncolgroup = "<span class='spnElem'>colgroup</span>";
-const spndata = "<span class='spnElem'>data</span>";
 const spndata = "<span class='spnElem'>data</span>";
 const spndatalist = "<span class='spnElem'>datalist</span>";
 const spndd = "<span class='spnElem'>dd</span>";
@@ -149,7 +149,6 @@ const code = "/code/gi";
 const col = "/col/gi";
 const colgroup = "/colgroup/gi";
 const data = "/data/gi";
-const data = "/data/gi";
 const datalist = "/datalist/gi";
 const dd = "/dd/gi";
 const del = "/del/gi";
@@ -198,6 +197,103 @@ const samp = "/samp/gi";
 //\\ <---------- || || ‖ ‖ _-_- ‿⁀‿⁀‿⁀‿⁀‿⁀‿ -_-_ ‖ ‖ || || ----------> //\\
 
 
-function resultFunction() {
-    
+const  resultFunction = () => {
+    if(HTMLinput.value !== ""){
+        let fValue;
+        fValue = HTMLinput.value;
+        fValue.replace(div, spndiv)
+        fValue.replace(html, spnhtml)
+        fValue.replace(body, spnbody)
+        fValue.replace(input, spninput)
+        fValue.replace(section, spnsection)
+        fValue.replace(img, spnimg)
+        fValue.replace(p, spnp)
+        fValue.replace(h1, spnh1)
+        fValue.replace(h2, spnh2)
+        fValue.replace(h3, spnh3)
+        fValue.replace(h4, spnh4)
+        fValue.replace(h5, spnh5)
+        fValue.replace(h6, spnh6)
+        fValue.replace(textarea, spntextarea)
+        fValue.replace(button, spnbutton)
+        fValue.replace(a, spna)
+        fValue.replace(script, spnscript)
+        fValue.replace(style, spnstyle)
+        fValue.replace(meta, spnmeta)
+        fValue.replace(link, spnlink)
+        fValue.replace(DOCTYPE, spnDOCTYPE)
+        fValue.replace(head, spnhead)
+        fValue.replace(header, spnheader)
+        fValue.replace(footer, spnfooter)
+        fValue.replace(main, spnmain)
+        fValue.replace(abbr, spnabbr)
+        fValue.replace(acronym, spnacronym)
+        fValue.replace(address, spnaddress)
+        fValue.replace(applet, spnapplet)
+        fValue.replace(area, spnarea)
+        fValue.replace(article, spnarticle)
+        fValue.replace(aside, spnaside)
+        fValue.replace(audio, spnaudio)
+        fValue.replace(b, spnb)
+        fValue.replace(base, spnbase)
+        fValue.replace(basefont, spnbasefont)
+        fValue.replace(bdi, spnbdi)
+        fValue.replace(bdo, spnbdo)
+        fValue.replace(blockquote, spnblockquote)
+        fValue.replace(br, spnbr)
+        fValue.replace(canvas, spncanvas)
+        fValue.replace(caption, spncaption)
+        fValue.replace(cite, spncite)
+        fValue.replace(code, spncode)
+        fValue.replace(col, spncol)
+        fValue.replace(colgroup, spncolgroup)
+        fValue.replace(data, spndata)
+        fValue.replace(datalist, spndatalist)
+        fValue.replace(dd, spndd)
+        fValue.replace(del, spndel)
+        fValue.replace(details, spndetails)
+        fValue.replace(dfn, spndfn)
+        fValue.replace(dialog, spndialog)
+        fValue.replace(dl, spndl)
+        fValue.replace(dt, spndt)
+        fValue.replace(em, spnem)
+        fValue.replace(emded, spnemded)
+        fValue.replace(fieldset, spnfieldset)
+        fValue.replace(figcaption, spnfigcaption)
+        fValue.replace(figure, spnfigure)
+        fValue.replace(form, spnform)
+        fValue.replace(hr, spnhr)
+        fValue.replace(i, spni)
+        fValue.replace(iframe, spniframe)
+        fValue.replace(ins, spnins)
+        fValue.replace(kbd, spnkbd)
+        fValue.replace(label, spnlabel)
+        fValue.replace(legend, spnlegend)
+        fValue.replace(li, spnli)
+        fValue.replace(map, spnmap)
+        fValue.replace(mark, spnmark)
+        fValue.replace(meter, spnmeter)
+        fValue.replace(nav, spnnav)
+        fValue.replace(noscript, spnnoscript)
+        fValue.replace(object, spnobject)
+        fValue.replace(ol, spnol)
+        fValue.replace(optgroup, spnoptgroup)
+        fValue.replace(option, spnoption)
+        fValue.replace(output, spnoutput)
+        fValue.replace(param, spnparam)
+        fValue.replace(picture, spnpicture)
+        fValue.replace(pre, spnpre)
+        fValue.replace(progress, spnprogress)
+        fValue.replace(q, spnq)
+        fValue.replace(rp, spnrp)
+        fValue.replace(rt, spnrt)
+        fValue.replace(ruby, spnruby)
+        fValue.replace(s, spns)
+        fValue.replace(samp, spnsamp)
+
+
+        HTMLoutput.innerHTML = fValue;
+    }
 }
+
+HTMLinput.addEventListener("onkeyup", resultFunction)

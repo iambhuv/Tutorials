@@ -76,11 +76,9 @@
     <button class="mainButton">Do You Wanna Click Me? 2</button>
     <button class="mainButton">Do You Wanna Click Me? 3</button>
 
-    <!-- Javascript ↓↓ -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script type="text/javascript">
-        const mainButton = $(".mainButton");
+        const mainButton = document.querySelectorAll(".mainButton");
 
         function mainFunc(e) {
             const ripple = document.createElement('span');
@@ -94,7 +92,9 @@
             }, 1200);
         }
 
-        mainButton.on("click", mainFunc)
+        mainButton.forEach(e=> {
+            e.addEventListener("click", mainFunc)
+        })
     </script>
 </body>
 

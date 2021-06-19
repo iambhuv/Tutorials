@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    background: #3c80ff;
+    display: grid;
+    place-content: center;
+}
+.wrapper{
+    width: 680px;
+    height: fit-content;
+    position: relative;
+}
+#bg{
+    position: absolute;
+    background: #0000;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.searchBar{
+    position: relative;
+    width: 100%;
+}
+
+.submit{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    color: #535353;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px 2px  #6662;
+    background: transparent;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+/* .submit:active{
+} */
+
+.search{
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    font-size: 1.4rem;
+    padding: 0.6rem 2rem;
+    padding-left: 4rem;
+    width: 100%;
+}
+.search.active{
+    /* padding: 1rem 2rem; */
+    padding-left: 4rem;
+    border-radius: 25px 25px 0 0;
+}
+
+.submit{
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.searchHistory{
+    visibility: hidden;
+    background: #fff;
+    width: 100%;
+    padding: 8px 26px;
+    padding-bottom: 8px;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    opacity: 0;
+}
+.searchHistory.active{
+    opacity: 1;
+    visibility: visible;
+    background: #fff;
+    width: 100%;
+    padding: 8px 26px;
+    padding-bottom: 8px;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+}
+
+.searchItem{
+    width: calc(100% + (26px * 2));
+    height: 44px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: -24px;
+    padding: 4px 20px;
+    justify-content: space-between;
+}
+.searchItem i{
+    font-size: 1.6rem;
+    color: #333e;
+}
+.searchedText{
+    padding: 0 10px;
+    float: left;
+    position: absolute;
+    left: 54px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.searchItem:hover{
+    background: #aaa2;
+}

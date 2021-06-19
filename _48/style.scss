@@ -1,0 +1,402 @@
+$theme_bg: linear-gradient(109.6deg, rgba(62, 161, 219, 1) 11.2%, rgba(93, 52, 236, 1) 100.2%);
+
+@mixin absoluteCenter {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    background: rgba(93, 52, 236, 1);
+}
+
+::-webkit-scrollbar-thumb{
+    background: #ddd;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+button,
+.todoTask,
+.groupTitle{
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 4rem 0;
+    background: $theme_bg;
+}
+.wrapper{
+    height: fit-content;
+    width: 520px;
+    padding: 20px 32px;
+    background: #ffffffd7;
+    border-radius: 0.4rem;
+
+    .title h1{
+        text-align: center;
+        font-size: 3.2rem;
+        font-weight: 400;
+        color: #333;
+    }
+
+    .separator{
+        width: 80%;    
+        margin: 0 auto;
+        height: 2px;
+        background: #ccc;
+    }
+
+    .content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .create-column{
+        margin: 1.2rem 0;
+
+        h3{
+            font-size: 1.6rem;
+            text-align: center;
+            color: #232323;
+            font-size: 400;
+        }
+        .inputGroup{
+            margin: 1rem auto;
+            width: fit-content;
+            display: flex;
+
+            .cgInput{
+                border: none;
+                outline: none;
+                font-size: 1.2rem;
+                border-bottom: 2px solid #888;
+                position: relative;
+                background: transparent;
+            }
+
+            #createGroup,
+            #createTodo{
+                pointer-events: none;
+            }
+            #createGroup.working,
+            #createTodo.working{
+                pointer-events: none;
+            }
+            
+            #createGroup.working .animatedCB .line,
+            #createTodo.working .animatedCB .line{
+                pointer-events: all;
+                cursor: pointer;
+                animation: addBtnGrow 0.2s linear forwards;
+            }
+
+            @keyframes addBtnGrow {
+                to{
+                    height: 20px;
+                }
+            }
+
+            .animatedCB{
+                height: 34px;
+                width: 28px;
+                position: relative;
+                border-bottom: 2px solid #888;
+
+                .line{
+                    position: absolute;
+                    width: 3px;
+                    height: 0;
+                    background: #000;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+
+                    &:first-child{
+                        transform: translate(-50%,-50%) rotate(0deg);
+                    }
+                    &:last-child{
+                        transform: translate(-50%,-50%) rotate(90deg);
+                    }
+                }
+                
+            }
+        }
+        
+    }
+    .todoGroup__Container,
+    .todosContainer{
+        .tg_column,
+        .todo{
+            background: $theme_bg;
+            background-size: 100vh 100%;
+            margin: 1rem 0;
+            padding: 1rem 1.6rem;
+            color: #f0f8ff;
+            transition: all 0.6s;
+            position: relative;
+            border-radius: 0.28rem;
+
+            &:hover{
+                transform: scale(1.06);
+            }
+            &.deleting,
+            .todo{
+                transform: scaleY(0) !important;
+                pointer-events: none;
+            }
+
+            .todoTask {
+                font-size: 1.8rem;
+            }
+            .groupTitle{
+                font-size: 2.2rem;
+            }
+            .groupTitle,
+            .todoTask{
+                font-size: 1.8rem;
+                font-weight: 350;
+                max-width: calc(100% - 60px);
+                margin-bottom: 0.6rem;
+                cursor: pointer;
+                width: fit-content;
+                display: block;
+                color: #fff;
+                position: relative;
+            }
+
+            .deleteGroup,
+            .deleteTodo,
+            .editGroup,
+            .editTodo{
+                height: 50px;
+                width: 50px;
+                position: absolute;
+                right: 1.6rem;
+                color: #efefef;
+                font-size: 2.2rem;
+                font-family: 100;
+            }
+            .deleteGroup,
+            .deleteTodo{
+                top: 50%;
+                transform: translateY(-100%);
+            }
+
+            .editGroup,
+            .editTodo{
+                bottom: 50%;
+                transform: translateY(100%);
+            }
+
+        }
+
+        
+        .oops{
+            text-align: center;
+            font-size: 10rem;
+            opacity: 0.8;
+        }
+        .noGroupFound{
+            text-align: center;
+            color: #333;
+            font-weight: 400;
+            font-weight: 2rem;
+            font-size: 2rem;
+        }
+    }
+    .todosContainer{
+        
+        .todo{
+            border-radius: 0.28rem 0.28rem 0 0.28rem ;
+            margin-bottom: 3.4rem;
+
+            &.completed{
+                opacity: 0.6;
+                transform: scale(1) !important;
+
+                .todoTask{
+                    text-decoration: line-through;
+                    text-decoration-color: #000;
+                    user-select: none;
+                    pointer-events: none;
+                }
+                .editTodo{
+                    display: none;
+                }
+                .markAsDone{
+                    color: green;
+                    cursor: default;
+                }
+            }
+            &:hover{
+                transform: scale(1.06);
+            }
+
+            .markAsDone{
+                font-size: 1.2rem;
+                background: #fff;
+                padding: 0.2rem 0.6rem;
+                border: 1px solid #aaa;
+                border-top: none;
+                border-radius: 0 0 0.2rem 0.2rem;
+                position: absolute;
+                top: 100%;
+                right: 0;
+            }
+
+
+        }
+    }
+    .todoCount{
+        margin-top: 1rem;
+        border-top: 2px solid #666;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        span{
+            font-size: 1.32rem;
+            margin: 0.8rem 0 0.4rem 0;
+
+            span{
+                font-size: 1.1em;
+                color: rgb(0, 110, 255);
+            }
+        }
+        button{
+            background: #3aa0ff;
+
+            &:hover{
+                background: #1e89ec;
+            }
+        }
+
+    }
+    
+    .todoCount button{
+        float: right;
+        padding: 0.4rem 1rem;
+        font-size: 1.2rem;
+        color: #fff;
+        font-weight: 300;
+        letter-spacing: 1px;
+        border-radius: 0.2rem;
+        transition: all 0.2s;
+    }
+
+}
+
+.deleteWarningWall{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: #fff4;
+    backdrop-filter: blur(0px);
+    z-index: 10000;
+    animation: bgBlur 0.15s linear forwards;
+
+    &.deleting{
+        animation: bgNormal 0.15s linear forwards;
+
+        .deleteWarning{
+            animation: disappear 0.5s linear forwards;
+        }
+    }
+
+    .deleteWarning{
+        width: 560px;
+        height: fit-content;
+        background: #ffffff48;
+        backdrop-filter: blur(20px);
+        position: absolute;
+        padding: 26px 36px;
+        border-radius: .25rem;
+        animation: popOut .2s linear forwards;
+        @include absoluteCenter;
+
+        h1{
+            font-weight: 400;
+            color: #555;
+        }
+        h3{
+            font-weight: 400;
+            color: #666;
+        }
+    }
+
+    @keyframes bgBlur {
+        to{
+            backdrop-filter: blur(10px);
+        }
+    }
+    @keyframes bgNormal {
+        to{
+            backdrop-filter: blur(0px);
+            background: none;
+        }
+    }
+    @keyframes disappear {
+        0%{
+            transform: translate(-50%, -50%) scale(1);
+        }10%{
+            transform: translate(-50%, -50%) scale(1.06);
+        }100%{
+            transform: translate(-50%, -50%) scale(0.6);
+        }
+    }
+    @keyframes popOut {
+        0%{
+            transform: translate(-50%, -50%) scale(.8);
+        }10%{
+            transform: translate(-50%, -50%) scale(1.06);
+        }100%{
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    .dwFooter{
+        margin-top: 1rem;
+        border-top: 2px solid #666;
+
+        .Cancel,
+        .Delete{
+            float: right;
+            padding: 0.4rem 1rem;
+            font-size: 1.2rem;
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: 1px;
+            border-radius: 0.2rem;
+            transition: all 0.2s;
+            margin: 1rem 0.6rem;
+        }
+        .Cancel {
+            background: #888;
+            &:hover{
+                background: #646464;
+            }
+        }
+        .Delete{
+            background: #ff3535;
+            &:hover{
+                background: #c72323;
+            }
+        }
+    }
+    
+}

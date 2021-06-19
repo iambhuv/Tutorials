@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTodo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="title">
+                <h1 class="groupTitle">Todo Group</h1>
+            </div>
+            <div class="separator"></div>
+            <div class="content">
+                <div class="create-column">
+                    <h3>Create Todo List</h3>
+                    <div class="inputGroup">
+                        <input type="text" class="cgInput" id="createTodoItem" placeholder="for eg. - Make a Website"
+                            spellcheck="false">
+                        <button type="submit" id="CreateTodo">
+                            <div class="animatedCB">
+                                <span class="line"></span>
+                                <span class="line"></span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="todosContainer" id="todoListContainer">
+                    <!-- Dummy Todo Items -->
+
+                    <div class="todo completed">
+                        <input class="todoTask" title="Dummy Todo" readonly="true" spellcheck="false" value="Dummy Todo">
+                        <span>11-06-2021 20:19</span>
+                        <button class="markAsDone">Mark as Done <i class="far fa-check-circle"></i></button>
+                        <button class="deleteTodo">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                        <button class="editTodo">
+                            <i class="far fa-edit"></i>
+                        </button>
+                    </div>
+                    <div class="todo">
+                        <input class="todoTask" title="Dummy Todo" readonly="true" spellcheck="false" value="Dummy Todo">
+                        <span>11-06-2021 20:19</span>
+                        <button class="markAsDone">Mark as Done <i class="far fa-check-circle"></i></button>
+                        <button class="deleteTodo">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                        <button class="editTodo">
+                            <i class="far fa-edit"></i>
+                        </button>
+                    </div>
+                    <div class="todo">
+                        <input class="todoTask" title="Dummy Todo" readonly="true" spellcheck="false" value="Dummy Todo">
+                        <span>11-06-2021 20:19</span>
+                        <button class="markAsDone">Mark as Done <i class="far fa-check-circle"></i></button>
+                        <button class="deleteTodo">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                        <button class="editTodo">
+                            <i class="far fa-edit"></i>
+                        </button>
+                    </div>
+                    <div class="todo">
+                        <input class="todoTask" title="Dummy Todo" readonly="true" spellcheck="false" value="Dummy Todo">
+                        <span>11-06-2021 20:19</span>
+                        <button class="markAsDone">Mark as Done <i class="far fa-check-circle"></i></button>
+                        <button class="deleteTodo">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                        <button class="editTodo">
+                            <i class="far fa-edit"></i>
+                        </button>
+                    </div>
+
+                    <!-- Todo Group Will Render With Javascript HERE -->
+                </div>
+                <div class="todoCount">
+                    <span>You Currently Have <span id="todoCount">0</span> Todo Item</span>
+                    <button id="clearlist">Clear List</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTodo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <!-- <div class="deleteWarningWall">
+        <div class="deleteWarning">
+            <h1>Are You Sure Want To Delete This Group</h1>
+            <h3>Deleting This will Also Delete All Todos inside It</h3>
+            <div class="dwFooter">
+                <button class="Delete">Delete</button><button class="Cancel">Cancel</button>
+            </div>
+        </div>
+    </div> -->
+    <div class="container">
+        <div class="wrapper">
+            <div class="title">
+                <h1>MyTodo</h1>
+            </div>
+            <div class="separator"></div>
+            <div class="content">
+                <div class="create-column">
+                    <h3>Create Group</h3>
+                    <div class="inputGroup">
+                        <input type="text" class="cgInput" id="createGroupInput" placeholder="for eg. - MyTodo Group"
+                            spellcheck="false">
+                        <button type="submit" id="createGroup" >
+                            <div class="animatedCB">
+                                <span class="line"></span>
+                                <span class="line"></span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="todoGroup__Container" id="groupContainer">
+                    <!-- Some Dummy Data For Checking -->
+                    <!-- 
+                    <div class="tg_column">
+                        <input class="groupTitle" spellcheck="false" readonly="true" value="Dummy Group">
+                        <span>11-06-2021 20:00</span>
+                        <br>
+                        <span class="todosLength">Todo Item Contains : 0</span>
+                        <button class="deleteGroup">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                        <button class="editGroup">
+                            <i class="far fa-edit"></i>
+                        </button>
+                    </div>
+                    <div class="tg_column">
+                        <input class="groupTitle" spellcheck="false" readonly="true" value="Dummy Group">
+                        <span>12-06-2021 05:00</span>
+                        <br>
+                        <span class="todosLength">Todo Item Contains : 7</span>
+                        <button class="deleteGroup">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                        <button class="editGroup">
+                            <i class="far fa-edit"></i>
+                        </button>
+                    </div>
+                    <div class="tg_column">
+                        <input class="groupTitle" spellcheck="false" readonly="true" value="Dummy Group">
+                        <span>11-06-2021 14:00</span>
+                        <br>
+                        <span class="todosLength">Todo Item Contains : 2</span>
+                        <button class="deleteGroup">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                        <button class="editGroup">
+                            <i class="far fa-edit"></i>
+                        </button>
+                    </div>
+                    <div class="tg_column">
+                        <input class="groupTitle" spellcheck="false" readonly="true" value="Dummy Group">
+                        <span>01-06-2021 20:20</span>
+                        <br>
+                        <span class="todosLength">Todo Item Contains : 12</span>
+                        <button class="deleteGroup">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                        <button class="editGroup">
+                            <i class="far fa-edit"></i>
+                        </button>
+                    </div> -->
+
+                    <!-- Dummy no Data Found -->
+
+                    <h1 class="oops">😯</h1>
+                    <h5 class="noGroupFound">No Todo Group To Display</h5>
+
+                    <!-- Todo Group Will Render With Javascript HERE -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

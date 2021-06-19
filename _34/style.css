@@ -1,51 +1,62 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+  user-select: none;
 }
-.section{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(159, 217, 255);
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
-.container{
-    height: 70%;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center
+
+.contextmenu{
+  position: absolute;
+  background: #0a0a0a;
+  padding: 10px 16px;
+  border-radius: 0.6rem;
+  border-top-left-radius: 0;
+  color: #ddd;
+  overflow: hidden;
+  animation: opening 0.3s ease forwards;
+  height: 0px;
 }
-.bgText{
-    font-size: 5rem;
-    font-family: 'KG HAPPY', sans-serif;
-    color: #7776;
-    text-align: center;
-    user-select: none;
+@keyframes opening {
+  to{
+    height: 234.5px;
+  }
 }
-.select__Rectangle{
-    background: rgba(30, 104, 240, 0.349);
-    height: 1px;
-    width: 1px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    animation: rippleEffect 0.4s linear forwards;
-    border-radius: 50%;
+
+.contextmenu .separator{
+  height: 1px;
+  width: 90%;
+  background: #767676;
+  display: block;
+  margin: 8px auto;
 }
-@keyframes rippleEffect {
-    0%{
-        opacity: 1;
-        height: 1px;
-        width: 1px;
-    }50%{
-        opacity: 0.6;
-        height: 28px;
-        width: 28px;
-    }100%{
-        opacity: 0;
-        height: 58px;
-        width: 58px;
-    }
+
+.contextmenu .title{
+  font-size: 1.6rem;
+  white-space: nowrap;
+}
+.contextmenu .menu-navs{
+  display: flex;
+  flex-direction: column;
+}
+.contextmenu .menu-navs button{
+  background: transparent;
+  color: #ddd;
+  font-size: 1.2rem;
+  text-align: left;
+  padding: 0.2rem;
+  border: none;
+  outline: none;
+  white-space: nowrap;
+}
+.contextmenu .menu-navs button:hover{
+  background: #1f1f1f;
 }

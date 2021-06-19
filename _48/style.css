@@ -1,0 +1,572 @@
+::-webkit-scrollbar {
+  width: 8px;
+  background: #5d34ec;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: poppins;
+}
+
+button,
+.todoTask,
+.groupTitle {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 4rem 0;
+  background: linear-gradient(109.6deg, #3ea1db 11.2%, #5d34ec 100.2%);
+}
+
+.wrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 520px;
+  padding: 20px 32px;
+  background: #ffffffd7;
+  border-radius: 0.4rem;
+}
+
+.wrapper .title h1 {
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.wrapper .separator {
+  width: 80%;
+  margin: 0 auto;
+  height: 2px;
+  background: #ccc;
+}
+
+.wrapper .content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .create-column {
+  margin: 1.2rem 0;
+}
+
+.wrapper .create-column h3 {
+  font-size: 1.6rem;
+  text-align: center;
+  color: #232323;
+  font-size: 400;
+}
+
+.wrapper .create-column .inputGroup {
+  margin: 1rem auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .create-column .inputGroup .cgInput {
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #888;
+  position: relative;
+  background: transparent;
+}
+
+.wrapper .create-column .inputGroup #createGroup,
+.wrapper .create-column .inputGroup #createTodo {
+  pointer-events: none;
+}
+
+.wrapper .create-column .inputGroup #createGroup.working,
+.wrapper .create-column .inputGroup #createTodo.working {
+  pointer-events: none;
+}
+
+.wrapper .create-column .inputGroup #createGroup.working .animatedCB .line,
+.wrapper .create-column .inputGroup #createTodo.working .animatedCB .line {
+  pointer-events: all;
+  cursor: pointer;
+  -webkit-animation: addBtnGrow 0.2s linear forwards;
+          animation: addBtnGrow 0.2s linear forwards;
+}
+
+@-webkit-keyframes addBtnGrow {
+  to {
+    height: 20px;
+  }
+}
+
+@keyframes addBtnGrow {
+  to {
+    height: 20px;
+  }
+}
+
+.wrapper .create-column .inputGroup .animatedCB {
+  height: 34px;
+  width: 28px;
+  position: relative;
+  border-bottom: 2px solid #888;
+}
+
+.wrapper .create-column .inputGroup .animatedCB .line {
+  position: absolute;
+  width: 3px;
+  height: 0;
+  background: #000;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.wrapper .create-column .inputGroup .animatedCB .line:first-child {
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+          transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.wrapper .create-column .inputGroup .animatedCB .line:last-child {
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.wrapper .todoGroup__Container .tg_column,
+.wrapper .todoGroup__Container .todo,
+.wrapper .todosContainer .tg_column,
+.wrapper .todosContainer .todo {
+  background: linear-gradient(109.6deg, #3ea1db 11.2%, #5d34ec 100.2%);
+  background-size: 100vh 100%;
+  margin: 1rem 0;
+  padding: 1rem 1.6rem;
+  color: #f0f8ff;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  position: relative;
+  border-radius: 0.28rem;
+}
+
+.wrapper .todoGroup__Container .tg_column:hover,
+.wrapper .todoGroup__Container .todo:hover,
+.wrapper .todosContainer .tg_column:hover,
+.wrapper .todosContainer .todo:hover {
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
+}
+
+.wrapper .todoGroup__Container .tg_column.deleting,
+.wrapper .todoGroup__Container .tg_column .todo,
+.wrapper .todoGroup__Container .todo.deleting,
+.wrapper .todoGroup__Container .todo .todo,
+.wrapper .todosContainer .tg_column.deleting,
+.wrapper .todosContainer .tg_column .todo,
+.wrapper .todosContainer .todo.deleting,
+.wrapper .todosContainer .todo .todo {
+  -webkit-transform: scaleY(0) !important;
+          transform: scaleY(0) !important;
+  pointer-events: none;
+}
+
+.wrapper .todoGroup__Container .tg_column .todoTask,
+.wrapper .todoGroup__Container .todo .todoTask,
+.wrapper .todosContainer .tg_column .todoTask,
+.wrapper .todosContainer .todo .todoTask {
+  font-size: 1.8rem;
+}
+
+.wrapper .todoGroup__Container .tg_column .groupTitle,
+.wrapper .todoGroup__Container .todo .groupTitle,
+.wrapper .todosContainer .tg_column .groupTitle,
+.wrapper .todosContainer .todo .groupTitle {
+  font-size: 2.2rem;
+}
+
+.wrapper .todoGroup__Container .tg_column .groupTitle,
+.wrapper .todoGroup__Container .tg_column .todoTask,
+.wrapper .todoGroup__Container .todo .groupTitle,
+.wrapper .todoGroup__Container .todo .todoTask,
+.wrapper .todosContainer .tg_column .groupTitle,
+.wrapper .todosContainer .tg_column .todoTask,
+.wrapper .todosContainer .todo .groupTitle,
+.wrapper .todosContainer .todo .todoTask {
+  font-size: 1.8rem;
+  font-weight: 350;
+  max-width: calc(100% - 60px);
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+  color: #fff;
+  position: relative;
+}
+
+.wrapper .todoGroup__Container .tg_column .deleteGroup,
+.wrapper .todoGroup__Container .tg_column .deleteTodo,
+.wrapper .todoGroup__Container .tg_column .editGroup,
+.wrapper .todoGroup__Container .tg_column .editTodo,
+.wrapper .todoGroup__Container .todo .deleteGroup,
+.wrapper .todoGroup__Container .todo .deleteTodo,
+.wrapper .todoGroup__Container .todo .editGroup,
+.wrapper .todoGroup__Container .todo .editTodo,
+.wrapper .todosContainer .tg_column .deleteGroup,
+.wrapper .todosContainer .tg_column .deleteTodo,
+.wrapper .todosContainer .tg_column .editGroup,
+.wrapper .todosContainer .tg_column .editTodo,
+.wrapper .todosContainer .todo .deleteGroup,
+.wrapper .todosContainer .todo .deleteTodo,
+.wrapper .todosContainer .todo .editGroup,
+.wrapper .todosContainer .todo .editTodo {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  right: 1.6rem;
+  color: #efefef;
+  font-size: 2.2rem;
+  font-family: 100;
+}
+
+.wrapper .todoGroup__Container .tg_column .deleteGroup,
+.wrapper .todoGroup__Container .tg_column .deleteTodo,
+.wrapper .todoGroup__Container .todo .deleteGroup,
+.wrapper .todoGroup__Container .todo .deleteTodo,
+.wrapper .todosContainer .tg_column .deleteGroup,
+.wrapper .todosContainer .tg_column .deleteTodo,
+.wrapper .todosContainer .todo .deleteGroup,
+.wrapper .todosContainer .todo .deleteTodo {
+  top: 50%;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.wrapper .todoGroup__Container .tg_column .editGroup,
+.wrapper .todoGroup__Container .tg_column .editTodo,
+.wrapper .todoGroup__Container .todo .editGroup,
+.wrapper .todoGroup__Container .todo .editTodo,
+.wrapper .todosContainer .tg_column .editGroup,
+.wrapper .todosContainer .tg_column .editTodo,
+.wrapper .todosContainer .todo .editGroup,
+.wrapper .todosContainer .todo .editTodo {
+  bottom: 50%;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.wrapper .todoGroup__Container .oops,
+.wrapper .todosContainer .oops {
+  text-align: center;
+  font-size: 10rem;
+  opacity: 0.8;
+}
+
+.wrapper .todoGroup__Container .noGroupFound,
+.wrapper .todosContainer .noGroupFound {
+  text-align: center;
+  color: #333;
+  font-weight: 400;
+  font-weight: 2rem;
+  font-size: 2rem;
+}
+
+.wrapper .todosContainer .todo {
+  border-radius: 0.28rem 0.28rem 0 0.28rem;
+  margin-bottom: 3.4rem;
+}
+
+.wrapper .todosContainer .todo.completed {
+  opacity: 0.6;
+  -webkit-transform: scale(1) !important;
+          transform: scale(1) !important;
+}
+
+.wrapper .todosContainer .todo.completed .todoTask {
+  text-decoration: line-through;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.wrapper .todosContainer .todo.completed .editTodo {
+  display: none;
+}
+
+.wrapper .todosContainer .todo.completed .markAsDone {
+  color: green;
+  cursor: default;
+}
+
+.wrapper .todosContainer .todo:hover {
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
+}
+
+.wrapper .todosContainer .todo .markAsDone {
+  font-size: 1.2rem;
+  background: #fff;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid #aaa;
+  border-top: none;
+  border-radius: 0 0 0.2rem 0.2rem;
+  position: absolute;
+  top: 100%;
+  right: 0;
+}
+
+.wrapper .todoCount {
+  margin-top: 1rem;
+  border-top: 2px solid #666;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.wrapper .todoCount span {
+  font-size: 1.32rem;
+  margin: 0.8rem 0 0.4rem 0;
+}
+
+.wrapper .todoCount span span {
+  font-size: 1.1em;
+  color: #006eff;
+}
+
+.wrapper .todoCount button {
+  background: #3aa0ff;
+}
+
+.wrapper .todoCount button:hover {
+  background: #1e89ec;
+}
+
+.wrapper .todoCount button {
+  float: right;
+  padding: 0.4rem 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1px;
+  border-radius: 0.2rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.deleteWarningWall {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background: #fff4;
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
+  z-index: 10000;
+  -webkit-animation: bgBlur 0.15s linear forwards;
+          animation: bgBlur 0.15s linear forwards;
+}
+
+.deleteWarningWall.deleting {
+  -webkit-animation: bgNormal 0.15s linear forwards;
+          animation: bgNormal 0.15s linear forwards;
+}
+
+.deleteWarningWall.deleting .deleteWarning {
+  -webkit-animation: disappear 0.5s linear forwards;
+          animation: disappear 0.5s linear forwards;
+}
+
+.deleteWarningWall .deleteWarning {
+  width: 560px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: #ffffff48;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  position: absolute;
+  padding: 26px 36px;
+  border-radius: .25rem;
+  -webkit-animation: popOut .2s linear forwards;
+          animation: popOut .2s linear forwards;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.deleteWarningWall .deleteWarning h1 {
+  font-weight: 400;
+  color: #555;
+}
+
+.deleteWarningWall .deleteWarning h3 {
+  font-weight: 400;
+  color: #666;
+}
+
+@-webkit-keyframes bgBlur {
+  to {
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+}
+
+@keyframes bgBlur {
+  to {
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+}
+
+@-webkit-keyframes bgNormal {
+  to {
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+    background: none;
+  }
+}
+
+@keyframes bgNormal {
+  to {
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+    background: none;
+  }
+}
+
+@-webkit-keyframes disappear {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+  10% {
+    -webkit-transform: translate(-50%, -50%) scale(1.06);
+            transform: translate(-50%, -50%) scale(1.06);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(0.6);
+            transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+
+@keyframes disappear {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+  10% {
+    -webkit-transform: translate(-50%, -50%) scale(1.06);
+            transform: translate(-50%, -50%) scale(1.06);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(0.6);
+            transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+
+@-webkit-keyframes popOut {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0.8);
+            transform: translate(-50%, -50%) scale(0.8);
+  }
+  10% {
+    -webkit-transform: translate(-50%, -50%) scale(1.06);
+            transform: translate(-50%, -50%) scale(1.06);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes popOut {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0.8);
+            transform: translate(-50%, -50%) scale(0.8);
+  }
+  10% {
+    -webkit-transform: translate(-50%, -50%) scale(1.06);
+            transform: translate(-50%, -50%) scale(1.06);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.deleteWarningWall .dwFooter {
+  margin-top: 1rem;
+  border-top: 2px solid #666;
+}
+
+.deleteWarningWall .dwFooter .Cancel,
+.deleteWarningWall .dwFooter .Delete {
+  float: right;
+  padding: 0.4rem 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1px;
+  border-radius: 0.2rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  margin: 1rem 0.6rem;
+}
+
+.deleteWarningWall .dwFooter .Cancel {
+  background: #888;
+}
+
+.deleteWarningWall .dwFooter .Cancel:hover {
+  background: #646464;
+}
+
+.deleteWarningWall .dwFooter .Delete {
+  background: #ff3535;
+}
+
+.deleteWarningWall .dwFooter .Delete:hover {
+  background: #c72323;
+}
+/*# sourceMappingURL=style.css.map */

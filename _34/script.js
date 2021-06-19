@@ -1,17 +1,31 @@
-const mainBox = document.getElementById("mainBox");
+const body = document.body;
 
-const mainFunc = (event) =>{
-    const selRect = document.createElement('div');
-    selRect.classList.add("select__Rectangle")
-    selRect.style.top = event.clientY+"px";
-    selRect.style.left = event.clientX+"px";
-    mainBox.appendChild(selRect)
-    setTimeout(() =>{
-        selRect.remove();
-    }, 600)
-    selRect.addEventListener("click", () =>{
-        alert("rectangle Clicked")
-    })
-}
+body.addEventListener("contextmenu", (e) => {
+  const contextMenu = document.querySelector(".contextmenu")
+  e.preventDefault();
 
-mainBox.addEventListener("mousedown", mainFunc, false);
+  if (contextMenu !== null) {
+    contextMenu.remove();
+  }
+  
+  console.log(e);
+
+  const customMenu = document.createElement("div");
+  customMenu.classList.add("contextmenu");
+  customMenu.innerHTML = `<span class="title">Custom Menu</span>
+  <div class="separator"></div>
+  <div class="menu-navs">
+    <button>Button 1</button>
+    <button>Button 1</button>
+    <button>Button 1</button>
+  </div>
+  <div class="separator"></div>
+  <div class="menu-navs">
+    <button>Button 4</button>
+  </div>`;
+
+  customMenu.style.left = e.clientX + "px";
+  customMenu.style.top = e.clientY + "px";
+
+  body.prepend(customMenu);
+});
