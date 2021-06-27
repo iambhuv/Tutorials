@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Console Log</title>
+</head>
+<body>
+  <h1>Hello Today We Will Make Custom Console log with source of that code dissapeared</h1>
+
+  <script>
+    // First We Will Log Normally 
+    console.log("This is a Normal Console Log");
+    // Now Lets make the Source Dissapeared One
+    setTimeout(console.log.bind(console, "This is Normal Console Log with Source Dissapeared"))
+    // Now lets make The Custom One
+
+    // The Important Thing is The %c at the very starting of that text
+    // Now lets add style after that %c will gone from log
+    setTimeout(console.warn.bind(console, "%cIts a Warning Subscribe Now", "font-size: 2.6rem;font-family: Poppins;color:red;background:yellow;padding:0.2rem 1.2rem;border-radius: 0.5rem"))
+  </script>
+</body>
+</html>
